@@ -72,7 +72,7 @@
 //In App.js in a new project
 
 import React, { Component } from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, StyleSheet, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -88,14 +88,18 @@ class SplashScreen extends Component {
     componentDidMount() {
         setTimeout(() => {
           this.state.navigation.navigate('Home')
-        }, 2500)
+        }, 8000)
     }
 
     render() {
         return (
-            <View style={{ backgroundColor: 'white' }}>
-                <View style={{ flex: 1, paddingTop: 50 }}>
-                    <Text>Splash Screen</Text>
+            <View>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                    
+                    <Image
+                      style={{width: 100, height: 100, marginTop: 600}}
+                      source={require('./images/HabitAtLogo2.gif')}
+                    />
                 </View>
             </View>
         )
@@ -110,31 +114,59 @@ function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
+      <Text>Already have a profile?</Text>
       <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        title="Login"
+        onPress={() => navigation.navigate('Login')}
+        
+      />
+      <Text>...or sign up to create one!</Text>
+       <Button
+        title="SignUp"
+        onPress={() => navigation.navigate('SignUp')}
         
       />
     </View>
   );
 }
 //componentDidMount(setTimeout({} => {navigation.navigate('DetailsScreen')}), 3000)
-function DetailsScreen({ navigation }) {
+function LoginScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button
+      <Text>Enter your User name and password:</Text>
+      {/* <Button
         title="Go to Details... again"
         onPress={() => navigation.push('Details')}
-      />
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+      /> */}
+      <Button title="Sign In" onPress={() => navigation.navigate('Profile')} />
       <Button title="Go back" onPress={() => navigation.goBack()} />
-      <Button
+      {/* <Button
         title="Go back to first screen in stack"
         onPress={() => navigation.popToTop()}
-      />
+      /> */}
     </View>
   );
+}
+
+function SignUpScreen({ navigation}) {
+  return (
+    <View style = {{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Sign In Screen</Text>
+      <Text>Fill in info here...</Text>
+      <Button title="Sign In" onPress={() => navigation.navigate('Profile')} />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+      
+    </View>
+  )
+}
+
+function ProfileScreen({ navigation }) {
+  return (
+    <View style = {{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Welcome...user...!</Text>
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+    </View>
+  )
 }
 
 const Stack = createStackNavigator();
@@ -142,16 +174,34 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
+      <Stack.Navigator initialRouteName="Splash"> 
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    
+    backgroundColor: 'white',
+    
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 30,
+    color: 'yellow',
+    
+  }
+});
 //==================================================================================
 // import 'react-native-gesture-handler';
 // import React, { Component } from 'react';
@@ -251,6 +301,4 @@ export default App;
 //       </Stack.Navigator>
 //     </NavigationContainer>
 //   );
-// }
-
 
