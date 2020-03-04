@@ -1,10 +1,24 @@
-// import Profile from './Profile';
+import React from 'react';
+import { Button, View, Text } from 'react-native';
+import styles from '../assets/styles/Styles';
+function HomeScreen({ navigation }) {
 
-export default function HomeScreen({navigation}) {
-    return (
+  return (
+    <View style = {styles.container}>
+      <Text>Home Screen</Text>
+      <Text>Already have a profile?</Text>
       <Button
-        title="Go to User's profile"
-        onPress={() => navigation.navigate('Profile', {name: 'User'})}
+        title="Login"
+        onPress={() => navigation.navigate('Login')}
+        
       />
-    );
-  }
+      <Text>...or sign up to create one!</Text>
+       <Button
+        title="SignUp"
+        onPress={() => navigation.navigate('SignUp')}
+        
+      />
+    </View>
+  );
+}
+export default HomeScreen;
