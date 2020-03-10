@@ -5,16 +5,22 @@ export default StyleSheet.create({
 
     container: {
         flex: 1,    
-        backgroundColor: 'lightgray',    
+        backgroundColor: '#00072d',    
         alignItems: 'center',
         justifyContent: 'center',
       },
     text: {
-      fontSize: 30,
-      color: 'yellow',
+      fontSize: 16,
+      color: '#58dd7a',
       
     },
-    
+
+    header: {
+      color: 'white',
+      
+      marginTop: 15,
+    },
+
     textContainer: {
       flex: 1,
       color: 'white',
@@ -29,5 +35,12 @@ export default StyleSheet.create({
       borderWidth: 1,
       backgroundColor: '#fff',
       textAlign:'center'
+    },
+
+    slider: {
+      color: 'green',
+      width: 200,
+      height: 45,      
+      alignItems: 'stretch',
     }
 });

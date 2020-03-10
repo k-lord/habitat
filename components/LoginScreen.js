@@ -12,6 +12,7 @@ function LoginScreen({ navigation }) {
             <Text>Enter your User name and password:</Text>
             <View style = {StyleSheet.textContainer}>
                 <TextInput
+                    
                     placeholder='User name'
                     style={styles.textInput}
                     // onChangeText={text => onChangeText(text)}
@@ -24,7 +25,7 @@ function LoginScreen({ navigation }) {
                     // value={value}
                     />
             </View>
-            <Button title="Sign In" onPress={() => navigation.navigate('Profile')} />
+            <Button title="Sign In" mode='contained' onPress={() => navigation.navigate('Profile')} />
             <Button title="Go back" onPress={() => navigation.goBack()} />
             {/* <Button
             title="Go back to first screen in stack"
