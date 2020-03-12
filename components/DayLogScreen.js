@@ -3,7 +3,7 @@ import { View, Text, Image} from 'react-native';
 import styles from '../assets/styles/Styles';
 import { Button } from 'react-native-paper';
 import Slider from 'react-native-slider';
-import Frames from '../assets/animation';
+//import Frames from '../assets/animation';
 
 export default class App extends React.Component {
     constructor(props) {
