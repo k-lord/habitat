@@ -3,7 +3,19 @@ import { View, Text, Image} from 'react-native';
 import styles from '../assets/styles/Styles';
 import { Button } from 'react-native-paper';
 import Slider from 'react-native-slider';
-//import Frames from '../assets/animation';
+
+const Frames = [
+    require('../assets/images/theface/face_sprites_00.png'),
+    require('../assets/images/theface/face_sprites_01.png'),
+    require('../assets/images/theface/face_sprites_02.png'),
+    require('../assets/images/theface/face_sprites_03.png'),
+    require('../assets/images/theface/face_sprites_04.png'),
+    require('../assets/images/theface/face_sprites_05.png'),
+    require('../assets/images/theface/face_sprites_06.png'),
+    require('../assets/images/theface/face_sprites_07.png'),
+    require('../assets/images/theface/face_sprites_08.png'),
+    require('../assets/images/theface/face_sprites_09.png'),
+];
 
 export default class App extends React.Component {
     constructor(props) {
@@ -11,18 +23,20 @@ export default class App extends React.Component {
       this.state = {
         value1: 0,
         value2: 0,
-        value3: 0,
-        imageSrc1 : []
+        value3: 0
       };
     }
-
-    //function zeroToHundred() 
-                             
-    change1(value, img) {
+    getImageSrc = value => {
+     console.log(value);
+     let index = Math.floor(value/11);
+     console.log(Frames[index]);
+     return Frames[index];
+    };
+    
+    change1(value) {
       this.setState(() => {
         return {
-          value1: parseFloat(value),
-          imageSrc: [],
+          value1: parseFloat(value)
         };
       });
     }
@@ -45,14 +59,12 @@ export default class App extends React.Component {
       return (
         <View style={styles.container}>
           <Text style={styles.text}>How was work?</Text>
-          
           <Image 
             style={{width: 30, height: 30}} 
-            source={require('../assets/images/Smile.gif')} />
-          {/* <Text style={styles.text}>{String(value1)}</Text> */}
+            source={this.getImageSrc(value1)} />          
           <Slider
             style={styles.slider}
-            step={10}
+            step={1}
             maximumValue={100}
             onValueChange={this.change1.bind(this)}
             value={value1}
@@ -60,8 +72,7 @@ export default class App extends React.Component {
           <Text style={styles.text}>How was school?</Text>
           <Image 
             style={{width: 30, height: 30}} 
-            source={require('../assets/images/Smile.gif')} />
-          <Text style={styles.text}>{String(value2)}</Text>
+            source={this.getImageSrc(value2)} />            
           <Slider
             style={styles.slider}
             step={1}
@@ -72,8 +83,7 @@ export default class App extends React.Component {
           <Text style={styles.text}>How was your breakfast?</Text>
           <Image 
             style={{width: 30, height: 30}} 
-            source={require('../assets/images/Smile.gif')} />
-          <Text style={styles.text}>{String(value3)}</Text>
+            source={this.getImageSrc(value3)} />            
           <Slider
             style={styles.slider}
             step={1}
@@ -91,4 +101,3 @@ export default class App extends React.Component {
       );
     }
   }
-  
