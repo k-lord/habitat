@@ -22,6 +22,7 @@ function ProfileScreen({ navigation }) {
       <Text style={styles.text}>or click here to go back...</Text>
       
       <Button 
+       style={styles.button}
        color='#197bbd'    
        mode='contained'
        title="Go back"

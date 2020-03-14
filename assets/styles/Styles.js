@@ -4,14 +4,15 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 export default StyleSheet.create({
 
     container: {
-        flex: 1,    
-        backgroundColor: '#00072d',    
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
+      flex: 1,    
+      backgroundColor: '#00072d',    
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
     text: {
       fontSize: 16,
       color: '#58dd7a',
+      margin:10,
       
     },
 
@@ -34,7 +35,8 @@ export default StyleSheet.create({
       borderColor: '#009688',
       borderWidth: 1,
       backgroundColor: '#fff',
-      textAlign:'center'
+      textAlign:'center',
+      marginBottom: 10,
     },
 
     slider: {
@@ -42,5 +44,10 @@ export default StyleSheet.create({
       width: 200,
       height: 45,      
       alignItems: 'stretch',
+    },
+
+    button: {
+      margin:10,
+      
     }
 });

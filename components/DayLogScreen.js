@@ -92,6 +92,21 @@ export default class App extends React.Component {
             value={value3}
           />
           <Button 
+            style={styles.button}
+            color='#197bbd'    
+            mode='contained'
+            title="Go back"
+            onPress={() => this.props.navigation.navigate('Indoors')}
+            >Go to Room</Button>
+          <Button 
+            style={styles.button}
+            color='#197bbd'    
+            mode='contained'
+            title="Go back"
+            onPress={() => this.props.navigation.navigate('Journal')}
+            >Go to Journal</Button>
+          <Button 
+            style={styles.button}
             color='#197bbd'    
             mode='contained'
             title="Go back"

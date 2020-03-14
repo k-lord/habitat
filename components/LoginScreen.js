@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import { Button, View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import styles from '../assets/styles/Styles';
-
+import { Button } from 'react-native-paper';
 
     
 
@@ -9,7 +9,7 @@ function LoginScreen({ navigation }) {
     // const [value, onChangeText] = useState('Name');
         return (
         <View style={styles.container}>
-            <Text>Enter your User name and password:</Text>
+            <Text style={styles.text}>Enter your User name and password:</Text>
             <View style = {StyleSheet.textContainer}>
                 <TextInput
                     
@@ -25,12 +25,20 @@ function LoginScreen({ navigation }) {
                     // value={value}
                     />
             </View>
-            <Button title="Sign In" mode='contained' onPress={() => navigation.navigate('Profile')} />
-            <Button title="Go back" onPress={() => navigation.goBack()} />
-            {/* <Button
-            title="Go back to first screen in stack"
-            onPress={() => navigation.popToTop()}
-            /> */}
+            <Button 
+                style={styles.button}
+                color='#197bbd' 
+                title="Sign In" 
+                mode='contained' 
+                onPress={() => navigation.navigate('Profile')}
+            >Sign In</Button>
+            <Button 
+                style={styles.button} 
+                color='#197bbd'
+                title="Go back" 
+                mode='contained' 
+                onPress={() => navigation.goBack()}
+            >Go Back</Button>
         </View>
         );
 };
