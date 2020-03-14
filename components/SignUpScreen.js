@@ -1,28 +1,29 @@
 import React from 'react';
-import { Button, View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import styles from '../assets/styles/Styles';
+import { Button } from 'react-native-paper';
 
 function SignUpScreen({ navigation}) {
     return (
       <View style = {styles.container}>
-        <Text>Sign In Screen</Text>
-        <Text>Fill in info here...</Text>
+        <Text style={styles.text}>Sign In Screen</Text>
+        <Text style={styles.text}>Fill in info here...</Text>
         <View style = {StyleSheet.textContainer}>
-            <Text>What's your name?</Text>
+            <Text style={styles.text}>What's your name?</Text>
                 <TextInput
                     placeholder='User name'
                     style={styles.textInput}
                     // onChangeText={text => onChangeText(text)}
                     // value={value}
                     />
-            <Text>Choose a password!</Text>
+            <Text style={styles.text}>Choose a password!</Text>
                 <TextInput
                     placeholder='Password'
                     style={styles.textInput}
                     // onChangeText={text => onChangeText(text)}
                     // value={value}
                     />
-            <Text>Re-enter chosen password!</Text>
+            <Text style={styles.text}>Re-enter chosen password!</Text>
                 <TextInput
                     placeholder='Password'
                     style={styles.textInput}
@@ -30,9 +31,20 @@ function SignUpScreen({ navigation}) {
                     // value={value}
                     />
             </View>
-        <Button title="Sign In" onPress={() => navigation.navigate('Profile')} />
-        <Button title="Go back" onPress={() => navigation.goBack()} />
-        
+        <Button 
+          style={styles.button}
+          color='#197bbd'
+          mode='contained' 
+          title="Sign In" 
+          onPress={() => navigation.navigate('Profile')} 
+          >Sign In</Button>
+        <Button 
+          style={styles.button} 
+          color='#197bbd'
+          mode='contained'
+          title="Go back" 
+          onPress={() => navigation.goBack()} 
+          >Go Back</Button>       
       </View>
     )
   };

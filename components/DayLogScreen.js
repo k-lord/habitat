@@ -1,23 +1,42 @@
 import React from 'react';
-import { View, Text} from 'react-native';
+import { View, Text, Image} from 'react-native';
 import styles from '../assets/styles/Styles';
 import { Button } from 'react-native-paper';
 import Slider from 'react-native-slider';
+
+const Frames = [
+    require('../assets/images/theface/face_sprites_00.png'),
+    require('../assets/images/theface/face_sprites_01.png'),
+    require('../assets/images/theface/face_sprites_02.png'),
+    require('../assets/images/theface/face_sprites_03.png'),
+    require('../assets/images/theface/face_sprites_04.png'),
+    require('../assets/images/theface/face_sprites_05.png'),
+    require('../assets/images/theface/face_sprites_06.png'),
+    require('../assets/images/theface/face_sprites_07.png'),
+    require('../assets/images/theface/face_sprites_08.png'),
+    require('../assets/images/theface/face_sprites_09.png'),
+];
 
 export default class App extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         value1: 0,
-        value2: 50,
-        value3: 90,
+        value2: 0,
+        value3: 0
       };
     }
-  
+    getImageSrc = value => {
+     console.log(value);
+     let index = Math.floor(value/11);
+     console.log(Frames[index]);
+     return Frames[index];
+    };
+    
     change1(value) {
       this.setState(() => {
         return {
-          value1: parseFloat(value),
+          value1: parseFloat(value)
         };
       });
     }
@@ -40,7 +59,9 @@ export default class App extends React.Component {
       return (
         <View style={styles.container}>
           <Text style={styles.text}>How was work?</Text>
-          <Text style={styles.text}>{String(value1)}</Text>
+          <Image 
+            style={{width: 30, height: 30}} 
+            source={this.getImageSrc(value1)} />          
           <Slider
             style={styles.slider}
             step={1}
@@ -49,7 +70,9 @@ export default class App extends React.Component {
             value={value1}
           />
           <Text style={styles.text}>How was school?</Text>
-          <Text style={styles.text}>{String(value2)}</Text>
+          <Image 
+            style={{width: 30, height: 30}} 
+            source={this.getImageSrc(value2)} />            
           <Slider
             style={styles.slider}
             step={1}
@@ -58,7 +81,9 @@ export default class App extends React.Component {
             value={value2}
           />
           <Text style={styles.text}>How was your breakfast?</Text>
-          <Text style={styles.text}>{String(value3)}</Text>
+          <Image 
+            style={{width: 30, height: 30}} 
+            source={this.getImageSrc(value3)} />            
           <Slider
             style={styles.slider}
             step={1}
@@ -67,6 +92,21 @@ export default class App extends React.Component {
             value={value3}
           />
           <Button 
+            style={styles.button}
+            color='#197bbd'    
+            mode='contained'
+            title="Go back"
+            onPress={() => this.props.navigation.navigate('Indoors')}
+            >Go to Room</Button>
+          <Button 
+            style={styles.button}
+            color='#197bbd'    
+            mode='contained'
+            title="Go back"
+            onPress={() => this.props.navigation.navigate('Journal')}
+            >Go to Journal</Button>
+          <Button 
+            style={styles.button}
             color='#197bbd'    
             mode='contained'
             title="Go back"
@@ -76,4 +116,3 @@ export default class App extends React.Component {
       );
     }
   }
-  

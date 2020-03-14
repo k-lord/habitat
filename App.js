@@ -10,6 +10,10 @@ import ProfileScreen from './components/Profile';
 import SignUpScreen from './components/SignUpScreen';
 import LoginScreen from './components/LoginScreen';
 import DayLogScreen from './components/DayLogScreen';
+import Env1 from './components/Env1';
+import Env2 from './components/Env2';
+import Env3 from './components/Env3';
+import Journal from './components/Journal';
 
 //You don't need to create activity in android folder. all pages and views are js files inside index.js and you can switch between them by packages like React Navigation. For creating an splash, you can make a splashScreen.js file and call it from index.js. In splashScreen.js you can set a timer and after that time, your first page of app (Home for example) calls. This is a sample code for splashScreen.js:
 
@@ -55,6 +59,10 @@ function App() {
         <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="DayLog" component={DayLogScreen} />
+        <Stack.Screen name="Indoors" component={Env1} />
+        {/* <Stack.Screen name="Outdoors" component={Env2} />
+        <Stack.Screen name="Gym" component={Env3} /> */}
+        <Stack.Screen name="Journal" component={Journal} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -13,8 +13,8 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/images/habitatLogo3.gif.gif",
-      "resizeMode": "center",
+      "image": "./assets/images/habitatLogo3.gif",
+      "resizeMode": "contained",
       "backgroundColor": "#ffffff"
     },
     "updates": {
