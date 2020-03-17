@@ -1,70 +1,71 @@
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createAppContainer } from 'react-navigation';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Icon from "react-native-vector-icons/FontAwesome";
+import HomeScreen from "./src/screens/HomeScreen";
+import ProfileScreen from "./src/screens/ProfileScreen";
+import BlogScreen from "./src/screens/BlogScreen";
+import DayLogScreen from "./src/screens/DayLogScreen";
 
-
-import  React, {Component} from 'react';
-import { View, Image } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import  styles from './assets/styles/Styles';
-import HomeScreen from './components/HomeScreen';
-import ProfileScreen from './components/Profile';
-import SignUpScreen from './components/SignUpScreen';
-import LoginScreen from './components/LoginScreen';
-import DayLogScreen from './components/DayLogScreen';
-import Env1 from './components/Env1';
-import Env2 from './components/Env2';
-import Env3 from './components/Env3';
-import Journal from './components/Journal';
-
-//You don't need to create activity in android folder. all pages and views are js files inside index.js and you can switch between them by packages like React Navigation. For creating an splash, you can make a splashScreen.js file and call it from index.js. In splashScreen.js you can set a timer and after that time, your first page of app (Home for example) calls. This is a sample code for splashScreen.js:
-
-// class SplashScreen extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = { navigation : props.navigation
-//         }
-//     }
-
-//     componentDidMount() {
-//         setTimeout(() => {
-//           this.state.navigation.navigate('Home')
-//         }, 8000)
-//     }
-
-//     render() {
-//         return (
-//             <View style= {styles.container} >
-//                 <View >
-                    
-//                     <Image
-//                       style={{width: 100, height: 100}}
-//                       source={require("./assets/images/habitatLogo2.gif")}
-//                     />
-//                 </View>
-//             </View>
-//         )
-//     }
-// }
-const Stack = createStackNavigator();
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" 
-         screenOptions={{
-          headerShown: false
-        }}> 
-        {/* <Stack.Screen name="Splash" component={SplashScreen} /> */}
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-        <Stack.Screen name="DayLog" component={DayLogScreen} />
-        <Stack.Screen name="Indoors" component={Env1} />
-        {/* <Stack.Screen name="Outdoors" component={Env2} />
-        <Stack.Screen name="Gym" component={Env3} /> */}
-        <Stack.Screen name="Journal" component={Journal} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <SafeAreaProvider>
+         <AppContainer />  
+      </SafeAreaProvider>
+        
+      
+        
+    );
+  }
 }
-export default App;
+
+
+
+
+const bottomTabNavigator = createBottomTabNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="home" size={25} color={tintColor} />
+        )
+      }
+    },
+    Blog: {
+      screen: BlogScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="journal" size={25} color={tintColor} />
+        )
+      }
+    },
+    DailyLog: {
+      screen: DayLogScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="search" size={25} color={tintColor} />
+        )
+      }
+    },
+    Profile: {
+      screen: ProfileScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="user" size={25} color={tintColor} />
+        )
+      }
+    },
+  },
+  {
+    initialRouteName: 'Home',
+    tabBarOptions: {
+      activeTintColor: '#eb6e3d'
+    }
+  }
+);
+
+const AppContainer = createAppContainer(bottomTabNavigator);
