@@ -22,11 +22,10 @@ export default StyleSheet.create({
       marginTop: 15,
     },
 
-    textContainer: {
-      flex: 1,
-      color: 'white',
-      alignItems: 'center',
-      justifyContent: 'center',
+    textareaContainer: {
+      height: 180,
+      padding: 5,
+      backgroundColor: '#F5FCFF',
     },
 
     textInput: {
@@ -37,6 +36,13 @@ export default StyleSheet.create({
       backgroundColor: '#fff',
       textAlign:'center',
       marginBottom: 10,
+    },
+
+    textarea: {
+      textAlignVertical: 'top',  // hack android
+      height: 170,
+      fontSize: 14,
+      color: '#333',
     },
 
     slider: {
