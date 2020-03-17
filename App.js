@@ -39,7 +39,7 @@ const bottomTabNavigator = createBottomTabNavigator(
       screen: BlogScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Icon name="journal" size={25} color={tintColor} />
+          <Icon name="book" size={25} color={tintColor} />
         )
       }
     },
@@ -47,7 +47,7 @@ const bottomTabNavigator = createBottomTabNavigator(
       screen: DayLogScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Icon name="search" size={25} color={tintColor} />
+          <Icon name="sun-o" size={25} color={tintColor} />
         )
       }
     },
@@ -63,7 +63,7 @@ const bottomTabNavigator = createBottomTabNavigator(
   {
     initialRouteName: 'Home',
     tabBarOptions: {
-      activeTintColor: '#eb6e3d'
+      activeTintColor: '#197BBD'
     }
   }
 );
