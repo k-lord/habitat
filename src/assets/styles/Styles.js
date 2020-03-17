@@ -51,3 +51,11 @@ export default StyleSheet.create({
       
     }
 });
+// background: rgb(48,224,191);
+//             background: linear-gradient(150deg, rgba(15,135,113,1) 0%, rgba(13,7,107,1) 40%, rgba(71,7,107,1) 100%) no-repeat center center fixed;
+//             -webkit-background-size: cover;
+//             -moz-background-size: cover;
+//             -o-background-size: cover;
+//             background-size: cover;
+//             color: white;
+//             font-family: Arial, Helvetica, sans-serif;

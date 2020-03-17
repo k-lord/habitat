@@ -1,11 +1,12 @@
 
 import * as React from 'react'; 
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import styles from '../assets/styles/Styles';
 
 class ProfileScreen extends React.Component {
   render() {
     return(
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#d0d0d0'}}>
+      <View style={styles.container}>
         <Text> This is my Profile screen </Text>
       </View>
     );

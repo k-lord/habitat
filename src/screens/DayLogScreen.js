@@ -58,7 +58,7 @@ class DayLogScreen extends React.Component {
     render() {
     const {value1, value2, value3} = this.state;
       return(
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff'}}>
+        <View style={styles.container}>
              <Text style={styles.text}>How was work?</Text>
           <Image 
             style={{width: 30, height: 30}} 

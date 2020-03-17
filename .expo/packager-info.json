@@ -1,10 +1,10 @@
 {
-  "expoServerNgrokUrl": "https://t5-fsi.anonymous.awesomeproject.exp.direct",
-  "packagerNgrokUrl": "https://packager.t5-fsi.anonymous.awesomeproject.exp.direct",
-  "ngrokPid": 17348,
+  "expoServerNgrokUrl": "https://t5-fsi.anonymous.habitat.exp.direct",
+  "packagerNgrokUrl": "https://packager.t5-fsi.anonymous.habitat.exp.direct",
+  "ngrokPid": 18640,
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 23136,
+  "packagerPid": 9568,
   "webpackServerPort": 19006
 }
