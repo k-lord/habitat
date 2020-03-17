@@ -1,14 +1,39 @@
-import * as React from 'react'; 
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import styles from '../assets/styles/Styles';
+import { LinearGradient } from 'expo-linear-gradient';
 
 class BlogScreen extends React.Component {
-    render() {
-      return(
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#d0d0d0'}}>
-          <Text> This is my Blog screen </Text>
-        </View>
-      );
-    }
-  }
+  render() {
+    return (
+      <View style={styles.container} >
+        <LinearGradient
+          colors={['#58DD7A', '#197BBD', '#00072D']}
+          style={styles.linearGradient}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 0, y: 1 }}>
+          <Text
+            style={{
+              backgroundColor: 'transparent',
+              fontSize: 15,
+              color: '#fff',
+              margin: 0
+            }}>
+            Sign in with Facebook
+          </Text>
+          <Text
+            style={{
+              backgroundColor: 'transparent',
+              fontSize: 15,
+              color: '#fff',
+            }}>
+            Sign in with Google
+          </Text>
 
-  export default BlogScreen;
+        </LinearGradient>
+      </View>
+    );
+  }
+}
+
+export default BlogScreen;
