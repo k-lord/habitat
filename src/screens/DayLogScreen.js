@@ -4,6 +4,8 @@ import { Button } from 'react-native-paper';
 import styles from '../assets/styles/Styles';
 import Slider from 'react-native-slider';
 import { LinearGradient } from 'expo-linear-gradient';
+import SubmitButton from '../components/DayLogSubmit'
+let axios = require("axios");
 
 
 const Frames = [
@@ -25,7 +27,9 @@ class DayLogScreen extends React.Component {
     this.state = {
       value1: 0,
       value2: 0,
-      value3: 0
+      value3: 0,
+      value4: 0,
+      value5: 0
     };
   }
   getImageSrc = value => {
@@ -56,9 +60,48 @@ class DayLogScreen extends React.Component {
       };
     });
   }
+  change4(value) {
+    this.setState(() => {
+      return {
+        value4: parseFloat(value),
+      };
+    });
+  }
+  change5(value) {
+    this.setState(() => {
+      return {
+        value5: parseFloat(value),
+      };
+    });
+  }
+
+  getStateValues = () => {
+    return ({
+      self_average: this.state.value1,
+      help_yourself: this.state.value2,
+      work_school_mood: this.state.value3,
+      life_mood: this.state.value4,
+      world_mood: this.state.value5
+    })
+  }
+
+  handleSubmit = event => {
+    console.log(event);
+    console.log(this.getStateValues())
+    event.preventDefault();
+    axios.put('http://18.221.127.241:3001/user/5e7022a44e0bde55d7d0b8d2/newdailycalc', {
+      daily_calc: this.getStateValues()
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   render() {
-    const { value1, value2, value3 } = this.state;
+    const { value1, value2, value3, value4, value5 } = this.state;
     return (
       <View style={styles.container}>
         <LinearGradient
@@ -66,7 +109,7 @@ class DayLogScreen extends React.Component {
           style={styles.linearGradient}
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}>
-          <Text style={styles.text}>How was work?</Text>
+          <Text style={styles.text}>How was your day?</Text>
           <Image
             style={{ width: 30, height: 30 }}
             source={this.getImageSrc(value1)} />
@@ -76,17 +119,17 @@ class DayLogScreen extends React.Component {
             maximumValue={100}
             onValueChange={this.change1.bind(this)}
             value={value1} />
-          <Text style={styles.text}>How was school?</Text>
+          <Text style={styles.text}>Did you do something today that brought you joy?</Text>
           <Image
             style={{ width: 30, height: 30 }}
             source={this.getImageSrc(value2)} />
           <Slider
             style={styles.slider}
-            step={1}
+            step={100}
             maximumValue={100}
             onValueChange={this.change2.bind(this)}
             value={value2} />
-          <Text style={styles.text}>How was your breakfast?</Text>
+          <Text style={styles.text}>How was work/school?</Text>
           <Image
             style={{ width: 30, height: 30 }}
             source={this.getImageSrc(value3)} />
@@ -95,7 +138,28 @@ class DayLogScreen extends React.Component {
             step={1}
             maximumValue={100}
             onValueChange={this.change3.bind(this)}
-            value={value3}/>
+            value={value3} />
+          <Text style={styles.text}>How was life outside of work/school?</Text>
+          <Image
+            style={{ width: 30, height: 30 }}
+            source={this.getImageSrc(value4)} />
+          <Slider
+            style={styles.slider}
+            step={1}
+            maximumValue={100}
+            onValueChange={this.change4.bind(this)}
+            value={value4} />
+          <Text style={styles.text}>How do you feel about you world you live in today?</Text>
+          <Image
+            style={{ width: 30, height: 30 }}
+            source={this.getImageSrc(value5)} />
+          <Slider
+            style={styles.slider}
+            step={1}
+            maximumValue={100}
+            onValueChange={this.change5.bind(this)}
+            value={value5} />
+          <SubmitButton onClick={this.handleSubmit} style={styles.button}>Publish</SubmitButton>
           {/* <Button
             style={styles.button}
             color='#197bbd'
