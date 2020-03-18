@@ -8,14 +8,17 @@ class Button extends Component {
     if (this.props.onPress) {
       this.props.onPress(e);
     }
-    axios.get('http://18.221.127.241:3001/user')
+    axios.put('http://18.221.127.241:3001/user/5e7022a44e0bde55d7d0b8d2/newjournal', {
+      feels: "testing, testing, 123"
+    })
       .then(function (response) {
         console.log(response);
       })
       .catch(function (error) {
         console.log(error);
-      })
+      });
   }
+
   render() {
     return (
       <TouchableOpacity
@@ -23,7 +26,8 @@ class Button extends Component {
         style={this.props.style} >
         <Text>{this.props.children}</Text>
       </TouchableOpacity>
-    );
+    )
   }
 }
+
 export default Button;
