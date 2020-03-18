@@ -96,7 +96,7 @@ class DayLogScreen extends React.Component {
             maximumValue={100}
             onValueChange={this.change3.bind(this)}
             value={value3}/>
-          <Button
+          {/* <Button
             style={styles.button}
             color='#197bbd'
             mode='contained'
@@ -116,7 +116,7 @@ class DayLogScreen extends React.Component {
             mode='contained'
             title="Go back"
             onPress={() => this.props.navigation.goBack()}
-          >Go Back</Button>
+          >Go Back</Button> */}
         </LinearGradient>
       </View>
     );
