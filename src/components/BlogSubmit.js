@@ -22,7 +22,6 @@ class Button extends Component {
   render() {
     return (
       <TouchableOpacity
-        onClick={this.handlePress.bind(this)}
         style={this.props.style} >
         <Text>{this.props.children}</Text>
       </TouchableOpacity>
