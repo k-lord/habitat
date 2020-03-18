@@ -1,10 +1,10 @@
 {
-  "expoServerNgrokUrl": "https://qh-zp9.anonymous.habitat.exp.direct",
-  "packagerNgrokUrl": "https://packager.qh-zp9.anonymous.habitat.exp.direct",
-  "ngrokPid": 4448,
+  "expoServerNgrokUrl": "https://q7-b82.anonymous.habitat.exp.direct",
+  "packagerNgrokUrl": "https://packager.q7-b82.anonymous.habitat.exp.direct",
+  "ngrokPid": 2700,
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 8176,
+  "packagerPid": 13664,
   "webpackServerPort": 19006
 }
