@@ -57,8 +57,13 @@ class BlogScreen extends React.Component {
               placeholderTextColor={'#197BBD'}
               underlineColorAndroid={'transparent'}
             />
+            <Button onClick={this.handleSubmit} style={styles.button}>
+              <Text style={styles.buttonText}>
+                Publish
+              </Text>
+            </Button>
           </View>
-          <Button onClick={this.handleSubmit} style={styles.button}>Publish</Button>
+         
         </LinearGradient>
       </View>
     );
