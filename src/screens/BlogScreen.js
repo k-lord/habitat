@@ -17,11 +17,15 @@ class BlogScreen extends React.Component {
     this.setState({ value: event.target.value });
     console.log(this.state.text)
   }
+
+  getStateText = () => this.state.text
+  
+
   handleSubmit = event => {
-    console.log('A name was submitted: ' + this.state.text);
+    console.log(event);
     event.preventDefault();
     axios.put('http://18.221.127.241:3001/user/5e7022a44e0bde55d7d0b8d2/newjournal', {
-      feels: this.state.text
+      feels: this.getStateText()
     })
       .then(function (response) {
         console.log(response);
