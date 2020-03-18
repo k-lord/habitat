@@ -15,7 +15,7 @@ class BlogScreen extends React.Component {
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}>
          
-          <Button onPress={ () => this.onSubmit(this.state.searchText) }>
+          <Button >
              <Icon name="search" size = {20} color = "#4285F4" />
           </Button>
           {/*  */}
