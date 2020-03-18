@@ -38,10 +38,16 @@ class BlogScreen extends React.Component {
         })
         // this.textInputRef.clear();
         console.log(this.state)
+
       })
       .catch(function (error) {
         console.log(error);
       });
+
+      
+
+      
+      
   }
 
   render() {
