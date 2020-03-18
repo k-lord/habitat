@@ -1,15 +1,12 @@
 import { StyleSheet } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-
 export default StyleSheet.create({
-
   linearGradient: {
     flex: 1,
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center'
   },
-
   container: {
     flex: 1,
     backgroundColor: 'transparent',
@@ -20,22 +17,17 @@ export default StyleSheet.create({
     fontSize: 16,
     color: '#FFFFFF',
     margin: 10,
-
   },
-
   header: {
     color: 'white',
-
     marginTop: 15,
   },
-
   textContainer: {
     flex: 1,
     color: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
-
   textInput: {
     width: '100%',
     height: 42,
@@ -45,24 +37,32 @@ export default StyleSheet.create({
     textAlign: 'center',
     marginBottom: 10,
   },
-
   slider: {
     color: '#ffffff',
     width: 200,
     height: 45,
     alignItems: 'stretch',
   },
-
   button: {
     margin: 10,
-
+    color: "#ffffff",
+    backgroundColor:"blue",
+    padding:10
+  },
+  textareaContainer: {
+    height: 180,
+    padding: 5,
+    backgroundColor: '#FFF',
+  },
+  textarea: {
+    textAlignVertical: 'top',  // hack android
+    height: 170,
+    fontSize: 14,
+    color: '#333',
+  },
+  heading: {
+    color: '#FFF',
+    fontSize: 40,
+    padding: 40
   }
 });
-// background: rgb(48,224,191);
-//             background: linear-gradient(150deg, rgba(15,135,113,1) 0%, rgba(13,7,107,1) 40%, rgba(71,7,107,1) 100%) no-repeat center center fixed;
-//             -webkit-background-size: cover;
-//             -moz-background-size: cover;
-//             -o-background-size: cover;
-//             background-size: cover;
-//             color: white;
-//             font-family: Arial, Helvetica, sans-serif;
