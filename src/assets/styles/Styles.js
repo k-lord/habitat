@@ -45,9 +45,13 @@ export default StyleSheet.create({
   },
   button: {
     margin: 10,
+    backgroundColor:"#197BBD",
+    padding:10,
+  },
+  buttonText: {
     color: "#ffffff",
-    backgroundColor:"blue",
-    padding:10
+    borderRadius: 20
+
   },
   textareaContainer: {
     height: 180,
