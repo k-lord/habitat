@@ -12,15 +12,17 @@ class HomeScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { username: '', password: ''};
   }
   handleChange = event => {
     this.setState({ value: event.target.value });
     console.log(this.state.text)
   }
 
-  getStateText = () => this.state.text
-  
+  getUsernamePassword = () => {
+    return ({username: this.state.username, password: this.state.password})
+  }
+
 
   handleSubmit = event => {
     console.log(event);
@@ -49,15 +51,24 @@ class HomeScreen extends React.Component {
           <Text style={styles.header}>Habit@</Text>
           <Text style={{ color: 'white' }}>Enter your username </Text>
           <TextInput
-
-            placeholder={'user name'}
+            onChangeText={(username) => {
+              console.log(this.state.username)
+              return this.setState({ username })
+            }}
+            defaultValue={this.state.username}
+            placeholder={'username'}
             placeholderTextColor={'#197BBD'}
             underlineColorAndroid={'transparent'}
             style={styles.textInput}>
           </TextInput>
           <Text style={{ color: 'white' }}>Enter your Password </Text>
           <TextInput
-
+            secureTextEntry={true}
+            onChangeText={(password) => {
+              console.log(this.state.password)
+              return this.setState({ password })
+            }}
+            defaultValue={this.state.password}
             placeholder={'password'}
             placeholderTextColor={'#197BBD'}
             underlineColorAndroid={'transparent'}
