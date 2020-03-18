@@ -18,8 +18,7 @@ class BlogScreen extends React.Component {
     console.log(this.state.text)
   }
 
-  getStateText = () => this.state.text
-  
+  getStateText = () => this.state.text  
 
   handleSubmit = event => {
     console.log(event);
@@ -29,10 +28,16 @@ class BlogScreen extends React.Component {
     })
       .then(function (response) {
         console.log(response);
+        
       })
       .catch(function (error) {
         console.log(error);
       });
+
+      
+
+      
+      
   }
 
   render() {
