@@ -13,6 +13,11 @@ class BlogScreen extends React.Component {
     super(props);
     this.state = { text: '' };
   }
+
+  resetText = () => {
+    this.setState({text: ''})
+  }
+
   handleChange = event => {
     this.setState({ value: event.target.value });
     console.log(this.state.text)
@@ -20,15 +25,19 @@ class BlogScreen extends React.Component {
 
   getStateText = () => this.state.text
   
-
   handleSubmit = event => {
     console.log(event);
+    console.log(this.state.text)
     event.preventDefault();
     axios.put('http://18.221.127.241:3001/user/5e7022a44e0bde55d7d0b8d2/newjournal', {
       feels: this.getStateText()
     })
-      .then(function (response) {
-        console.log(response);
+      .then( res => {
+        this.setState({
+          text: ''
+        })
+        // this.textInputRef.clear();
+        console.log(this.state)
       })
       .catch(function (error) {
         console.log(error);
@@ -48,15 +57,18 @@ class BlogScreen extends React.Component {
             <Textarea
               containerStyle={styles.textareaContainer}
               style={styles.textarea}
+              // autoCorrect={false} 
+              value={this.state.text}
+              // ref={component => this.textInputRef = component}
               onChangeText={(text) => {
                 console.log(this.state.text) 
                 return this.setState({text})}}
-              defaultValue={this.state.text}
+              // defaultValue={this.state.text}
               maxLength={140}
               placeholder={'Dear Journal...'}
               placeholderTextColor={'#197BBD'}
               underlineColorAndroid={'transparent'}
-            />
+              />
             <Button onClick={this.handleSubmit} style={styles.button}>
               <Text style={styles.buttonText}>
                 Publish
