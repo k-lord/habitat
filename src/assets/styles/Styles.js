@@ -29,8 +29,8 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   textInput: {
-    width: '100%',
-    height: 42,
+    
+    height: 30,
     borderColor: '#009688',
     borderWidth: 1,
     backgroundColor: '#fff',
@@ -46,8 +46,13 @@ export default StyleSheet.create({
   button: {
     margin: 10,
     color: "#ffffff",
-    backgroundColor:"blue",
-    padding:10
+    backgroundColor:"#228B22",
+    padding:10,
+    borderRadius: 15
+  },
+  buttonText: {
+    color: "#ffffff",
+    fontSize: 16,
   },
   textareaContainer: {
     height: 180,
