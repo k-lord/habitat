@@ -27,12 +27,16 @@ class HomeScreen extends React.Component {
   handleSubmit = event => {
     console.log(event);
     event.preventDefault();
-    axios.get('http://18.221.127.241:3001/user/5e7022a44e0bde55d7d0b8d2', {
+    axios.get('http://18.221.127.241:3001/user', {
     })
-      .then(function (response) {
-        console.log(response);
-        // bring me to the next page
-        // save the state of the user id to the app.js for the sake of getting id for all other calls
+      .then( res => {
+        this.setState({
+          username: '',
+          password: ''
+        })
+        // this.textInputRef.clear();
+        console.log(res)
+
       })
       .catch(function (error) {
         console.log(error);
@@ -48,12 +52,14 @@ class HomeScreen extends React.Component {
           style={styles.linearGradient}
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}>
+          <Image source={require('../assets/images/habitatLogo3.gif')} style={{height: 100, width: 100}} />
           <Text style={styles.heading}>Habit@</Text>
           <TextInput style={styles.input}
             onChangeText={(username) => {
               console.log(this.state.username)
               return this.setState({ username })
             }}
+            value={this.state.username}
             defaultValue={this.state.username}
             placeholder={'username'}
             placeholderTextColor={'#197BBD'}
@@ -66,6 +72,7 @@ class HomeScreen extends React.Component {
               console.log(this.state.password)
               return this.setState({ password })
             }}
+            value={this.state.password}
             defaultValue={this.state.password}
             placeholder={'password'}
             placeholderTextColor={'#197BBD'}
