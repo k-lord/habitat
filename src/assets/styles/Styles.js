@@ -40,13 +40,14 @@ export default StyleSheet.create({
   slider: {
     color: '#ffffff',
     width: 200,
-    height: 45,
+    height: 30,
     alignItems: 'stretch',
   },
   button: {
     margin: 10,
     backgroundColor:"#197BBD",
     padding:10,
+    borderRadius: 20
   },
   buttonText: {
     color: "#ffffff",
@@ -56,6 +57,9 @@ export default StyleSheet.create({
   },
   buttonText: {
     color: "#ffffff",
+    backgroundColor:"#197BBD",
+    padding: 10,
+    borderRadius: 10,
     fontSize: 16,
   },
   textareaContainer: {
@@ -68,10 +72,15 @@ export default StyleSheet.create({
     height: 170,
     fontSize: 14,
     color: '#333',
+    borderRadius: 8
   },
   heading: {
     color: '#FFF',
-    fontSize: 40,
-    padding: 40
+    fontSize: 60,
+    padding: 40,
+    fontFamily: 'Futura-Medium'
+  },
+  input: {
+    borderRadius: 5
   }
 });

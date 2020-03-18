@@ -47,7 +47,7 @@ class ProfileScreen extends React.Component {
           style={styles.linearGradient}
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}>
-          <Text style={{color: 'white'}}> This is my Profile screen </Text>
+          <Text style={styles.heading}> My Profile </Text>
           <SimpleLineChart></SimpleLineChart>
           <Button onClick={this.handleSubmit} style={styles.button}>
             <Text style={styles.buttonText}>

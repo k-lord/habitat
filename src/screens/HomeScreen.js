@@ -48,9 +48,8 @@ class HomeScreen extends React.Component {
           style={styles.linearGradient}
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}>
-          <Text style={styles.header}>Habit@</Text>
-          <Text style={{ color: 'white' }}>Enter your username </Text>
-          <TextInput
+          <Text style={styles.heading}>Habit@</Text>
+          <TextInput style={styles.input}
             onChangeText={(username) => {
               console.log(this.state.username)
               return this.setState({ username })
@@ -61,8 +60,7 @@ class HomeScreen extends React.Component {
             underlineColorAndroid={'transparent'}
             style={styles.textInput}>
           </TextInput>
-          <Text style={{ color: 'white' }}>Enter your Password </Text>
-          <TextInput
+          <TextInput style={styles.input}
             secureTextEntry={true}
             onChangeText={(password) => {
               console.log(this.state.password)

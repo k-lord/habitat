@@ -159,7 +159,11 @@ class DayLogScreen extends React.Component {
             maximumValue={100}
             onValueChange={this.change5.bind(this)}
             value={value5} />
-          <SubmitButton onClick={this.handleSubmit} style={styles.button}>Publish</SubmitButton>
+          <SubmitButton onClick={this.handleSubmit} style={styles.button}>
+            <Text style={styles.buttonText}>
+              Submit
+              </Text>
+          </SubmitButton>
           {/* <Button
             style={styles.button}
             color='#197bbd'
