@@ -109,6 +109,7 @@ class DayLogScreen extends React.Component {
           style={styles.linearGradient}
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}>
+          <Text style={styles.heading}> Daily Log </Text>
           <Text style={styles.text}>How was your day?</Text>
           <Image
             style={{ width: 30, height: 30 }}
